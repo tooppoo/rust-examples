@@ -30,4 +30,9 @@ fn main() {
     let (x, y, z) = tup;
     println!("tup is ({}, {}, {})", x, y, z);
     println!("tup is ({}, {}, {})", tup.0, tup.1, tup.2);
+
+    let a = [1, 2, 3, 4, 5];
+    let first = a[0];
+    let second = a[1];
+    println!("first is {}, second is {}", first, second);
 }
