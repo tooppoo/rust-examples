@@ -10,8 +10,15 @@ fn main() {
     };
 
     println!("value of y is {}", y);
+
+    let x = five();
+    println!("value of x is {}", x);
 }
 
 fn another_function(x: i32, y: i32) {
     println!("value of x is {}, y is {}", x, y);
+}
+
+fn five() -> i32 {
+    5
 }
