@@ -1,3 +1,4 @@
+
 fn main() {
     let number = 7;
 
@@ -114,44 +115,34 @@ fn twelve_days_of_christmas() -> String {
         }.to_string()
     }
     fn lyric_of(month: u32) -> String {
-        let ordinal = cardinal_to_ordinal(month);
-        let mut head = String::new();
-        head.push_str("On the ");
-        head.push_str(&ordinal);
-        head.push_str(" day of Christmas my true love sent to me\n");
+        let head = format!("On the {} day of Christmas my true love sent to me", cardinal_to_ordinal(month));
 
         let mut presents = String::new();
-
         match month {
             1 => {
-                presents.push_str(&present_of(month));
-                presents.push_str(".");
+                presents.push_str(&format!("{}.", present_of(month)));
             },
             _ => {
                 for m in (1..month + 1).rev() {
                     let present = if m == 1 {
-                        String::from("and ") + &present_of(m) + "."
+                        format!("and {}.", present_of(m))
                     } else {
-                        present_of(m) + ","
+                        format!("{},\n", present_of(m))
                     };
 
                     presents.push_str(&present);
-                    presents.push_str("\n");
                 };
             }
         }
 
-        let mut body = String::new();
-        body.push_str(&head);
-        body.push_str(&presents);
-
-        body
+        format!("{}\n{}", head, presents).to_string()
     }
 
     let mut lyric = String::new();
     for m in 1..13 {
-        lyric.push_str(&lyric_of(m));
-        lyric.push_str("\n");
+        lyric.push_str(
+            &format!("{}\n\n", lyric_of(m))
+        );
     };
 
     lyric
