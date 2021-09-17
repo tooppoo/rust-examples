@@ -59,8 +59,19 @@ fn main() {
     println!(
         "{}°F should be {}°C, actual is {}°C", f, fahrenheit_to_celsius(f), c
     );
+
+    println!("fibo(3) should be 2, actutal is {}", fibo(3));
+    println!("fibo(5) should be 5, actutal is {}", fibo(5));
+    println!("fibo(10) should be 55, actutal is {}", fibo(10));
 }
 
 fn fahrenheit_to_celsius(f: f32) -> f32 {
     (f - 32.0) / 1.8
+}
+
+fn fibo(n: u32) -> u32 {
+    match n {
+        0 | 1 => n,
+        _ => fibo(n - 1) + fibo(n - 2)
+    }
 }
