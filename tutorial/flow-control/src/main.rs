@@ -48,4 +48,9 @@ fn main() {
     for elem in a.iter() {
         println!("elem value is {}", elem);
     }
+
+    for number in (1..4).rev() {
+        println!("{}!", number);
+    }
+    println!("LIFT OFF!");
 }
