@@ -41,8 +41,11 @@ fn main() {
     let mut index = 0;
 
     while index < 5 {
-        println!("value is {}", a[index]);
+        println!("a[{}] value is {}", index, a[index]);
 
         index = index + 1;
+    }
+    for elem in a.iter() {
+        println!("elem value is {}", elem);
     }
 }
