@@ -20,4 +20,12 @@ fn main() {
     } else {
         println!("number is divisible by 4, 3 or 2");
     }
+
+    let condition: bool = true;
+    let number = if condition {
+        5
+    } else {
+        6
+    };
+    println!("the value of number is {}", number);
 }
