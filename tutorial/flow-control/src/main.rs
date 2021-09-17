@@ -53,4 +53,14 @@ fn main() {
         println!("{}!", number);
     }
     println!("LIFT OFF!");
+
+    let f = 104.0;
+    let c = 40.0;
+    println!(
+        "{}°F should be {}°C, actual is {}°C", f, fahrenheit_to_celsius(f), c
+    );
+}
+
+fn fahrenheit_to_celsius(f: f32) -> f32 {
+    (f - 32.0) / 1.8
 }
