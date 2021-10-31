@@ -19,6 +19,12 @@ fn main() {
     let mut_s2 = &mut s;
     mut_s2.push_str(", out of scope");
     println!("mut_s2 = '{}'", mut_s2);
+
+    let mut s = String::from("hello");
+    let r1 = &s;
+    let r2 = &s;
+    // let r3 = &mut s; // error
+    println!("r1 = '{}', r2 = '{}'", r1, r2);
 }
 
 fn calculate_length(s: &String) -> usize {
