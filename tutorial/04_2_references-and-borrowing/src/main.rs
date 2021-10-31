@@ -8,6 +8,17 @@ fn main() {
     println!("s before change is '{}'", s);
     change_borrowing(&mut s);
     println!("s after change is '{}'", s);
+
+    let mut s = String::from("hello");
+    {
+        let mut_s1 = &mut s;
+        mut_s1.push_str(", in scope");
+        println!("mut_s1 = '{}'", mut_s1);
+    }
+    // println!("s1 = '{}'", mut_s_1); // error
+    let mut_s2 = &mut s;
+    mut_s2.push_str(", out of scope");
+    println!("mut_s2 = '{}'", mut_s2);
 }
 
 fn calculate_length(s: &String) -> usize {
