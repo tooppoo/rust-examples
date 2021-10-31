@@ -16,4 +16,20 @@ fn main() {
     // println!("{}, world!", s1); error
     println!("{}, world!", s2);
     println!("{}, world!", s3);
+
+    let s = String::from("hello");
+
+    takes_ownership(s);
+    // println!("{}", s); error
+
+    let x = 5;
+    makes_copy(x);
+    println!("{}", x);
+}
+
+fn takes_ownership(s: String) {
+    println!("{}", s);
+}
+fn makes_copy(i: i32) {
+    println!("{}", i);
 }
