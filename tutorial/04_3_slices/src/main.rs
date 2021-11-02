@@ -1,6 +1,8 @@
 fn main() {
-    let s = String::from("Hello, world!");
+    let mut s = String::from("Hello, world!");
     let first_at = first_word(&s);
+
+    s.clear();
 
     println!("first of '{}' is {}", s, first_at);
 }
