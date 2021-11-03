@@ -4,7 +4,11 @@ fn main() {
 
     s.clear();
 
-    println!("first of '{}' is {}", s, first_at);
+    println!("first position of '{}' is {}", s, first_at);
+
+    let s = String::from("cogito, ergo sum");
+    let first = first_word(&s);
+    println!("first of '{}' is '{}'", s, first);
 }
 
 fn first_word_at(s: &String) -> usize {
@@ -17,4 +21,15 @@ fn first_word_at(s: &String) -> usize {
     }
 
     s.len()
+}
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
 }
