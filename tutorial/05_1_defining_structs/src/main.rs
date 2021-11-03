@@ -29,6 +29,13 @@ fn main() {
         String::from("someone")
     );
     println!("user name is '{}', email is '{}'", user.name, user.email);
+
+    let user2 = User {
+        email: String::from("another@example.com"),
+        name: String::from("another"),
+        ..user
+    };
+    println!("user2 name is '{}', email is '{}'", user2.name, user2.email);
 }
 
 fn new_user(email: String, name: String) -> User {
