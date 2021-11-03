@@ -11,7 +11,7 @@ fn main() {
     println!("first of '{}' is '{}'", s, first);
 }
 
-fn first_word_at(s: &String) -> usize {
+fn first_word_at(s: &str) -> usize {
     let bytes = s.as_bytes();
 
     for (i, &item) in bytes.iter().enumerate() {
@@ -22,7 +22,7 @@ fn first_word_at(s: &String) -> usize {
 
     s.len()
 }
-fn first_word(s: &String) -> &str {
+fn first_word(s: &str) -> &str {
     let bytes = s.as_bytes();
 
     for (i, &item) in bytes.iter().enumerate() {
