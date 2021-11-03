@@ -22,6 +22,19 @@ fn main() {
 
     let m: Message = Message::Move { x: 10, y: 20 };
     println!("{}", m.call());
+
+    let some_n = Some(5);
+    let some_s = Some("a string");
+    let absent_n: Option<i32> = None;
+
+    let sum = some_n.unwrap_or(0) + 10;
+    println!("sum = {}", sum);
+
+    let mes = some_s.unwrap_or("none");
+    println!("mes = {}", mes);
+
+    let sum = absent_n.unwrap_or(0) + 10;
+    println!("sum = {}", sum);
 }
 
 fn route(_ip: IpAddressKind) { }
